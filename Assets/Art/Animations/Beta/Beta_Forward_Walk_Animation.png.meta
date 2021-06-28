@@ -1,0 +1,347 @@
+fileFormatVersion: 2
+guid: 81ed445b70859e9449d630911d79f982
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4403114526348511170
+    second: Beta_Forward_Walk_Animation_0
+  - first:
+      213: -7663762815111995787
+    second: Beta_Forward_Walk_Animation_1
+  - first:
+      213: -491859865636444797
+    second: Beta_Forward_Walk_Animation_2
+  - first:
+      213: 742667783472651990
+    second: Beta_Forward_Walk_Animation_3
+  - first:
+      213: 2776597218188770289
+    second: Beta_Forward_Walk_Animation_4
+  - first:
+      213: -4056379927697556142
+    second: Beta_Forward_Walk_Animation_5
+  - first:
+      213: 6963742923604185686
+    second: Beta_Forward_Walk_Animation_6
+  - first:
+      213: 579627866069209372
+    second: Beta_Forward_Walk_Animation_7
+  - first:
+      213: -6076058065421651461
+    second: Beta_Forward_Walk_Animation_8
+  - first:
+      213: -7090747949760105131
+    second: Beta_Forward_Walk_Animation_9
+  - first:
+      213: -3072260216558908170
+    second: Beta_Forward_Walk_Animation_10
+  - first:
+      213: -6983818828155946788
+    second: Beta_Forward_Walk_Animation_11
+  - first:
+      213: -7065317000157959664
+    second: Beta_Forward_Walk_Animation_12
+  - first:
+      213: 5097909144480245330
+    second: Beta_Forward_Walk_Animation_13
+  - first:
+      213: -3468404231542143530
+    second: Beta_Forward_Walk_Animation_14
+  - first:
+      213: 3059798631802403464
+    second: Beta_Forward_Walk_Animation_15
+  - first:
+      213: 5088521591163228416
+    second: Beta_Forward_Walk_Animation_16
+  - first:
+      213: -472477510974847406
+    second: Beta_Forward_Walk_Animation_17
+  - first:
+      213: -2270957146433615221
+    second: Beta_Forward_Walk_Animation_18
+  - first:
+      213: -3053686672109867327
+    second: Beta_Forward_Walk_Animation_19
+  - first:
+      213: 4732270896939993491
+    second: Beta_Forward_Walk_Animation_20
+  - first:
+      213: 7105703288982609985
+    second: Beta_Forward_Walk_Animation_21
+  - first:
+      213: 1676077711966318724
+    second: Beta_Forward_Walk_Animation_22
+  - first:
+      213: 103290138537858026
+    second: Beta_Forward_Walk_Animation_23
+  - first:
+      213: 4319507406100884468
+    second: Beta_Forward_Walk_Animation_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Beta_Forward_Walk_Animation_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 35
+        width: 49
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c78d5045510b1d30800000000000000
+      internalID: 4403114526348511170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta_Forward_Walk_Animation_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 35
+        width: 49
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ed662f258d4a590800000000000000
+      internalID: -7663762815111995787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta_Forward_Walk_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 35
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385e775ee009c29f0800000000000000
+      internalID: -491859865636444797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta_Forward_Walk_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 36
+        width: 43
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de930c0a6c7e4a00800000000000000
+      internalID: 742667783472651990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta_Forward_Walk_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 36
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbba7a7574788620800000000000000
+      internalID: 2776597218188770289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta_Forward_Walk_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 36
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25dff8782f7d4b7c0800000000000000
+      internalID: -4056379927697556142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta_Forward_Walk_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 36
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65251942b4f24a060800000000000000
+      internalID: 6963742923604185686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beta_Forward_Walk_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 36
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1119f229704b0800800000000000000
+      internalID: 579627866069209372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
