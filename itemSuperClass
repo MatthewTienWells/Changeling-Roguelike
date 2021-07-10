@@ -7,12 +7,14 @@ using UnityEngine;
 public class Equipment : item {
 
 public EquipmentSlot EquipSlot;
-
+// the public int armor weapon flask is just giving the items an identity so the manager can use them in an array 
+// the 3 items mentioned are atached to the enum in the item manager file they are instanciated 
+// with integer identitys here and can be changed if the enum needs to be changed 
 public int armor;
 public int weapon; 
 
 public int flask;
-
+// the public override void use() cna be used for consumable tiems i think as well as runs the hole inventory i dont think it matters what items we put in it aslong as they can have int manes for the array
 public override void use()
 {
     base.use();
@@ -25,5 +27,7 @@ public override void use()
 
 
 }
-
+// this enum is giving the different areas of the charater names it can be modifyed or changed right here 
+//the quwipment manager will unequip an old peace of armor and put it back into the inventory automatically and update inventory
+// this is just an array that atomaticly feeds the items you pick up to the itemManager 
 public enum EquipmentSlot {Head, chest, legs, Weapon, feet, pocket}
