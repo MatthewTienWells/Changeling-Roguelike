@@ -13,6 +13,7 @@ public class IronHammer : ItemCollider
         attack.damage_type = "bludgeoning";
         attack.radius = 2;
         attack.duration = 1000;
+        attack.attackCollider = attackCollider;
     }
 
     // Update is called once per frame

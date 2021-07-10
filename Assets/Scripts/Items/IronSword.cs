@@ -13,6 +13,7 @@ public class IronSword : ItemCollider
         attack.damage_type = "slashing";
         attack.damage_modifier = 2;
         attack.duration = 500;
+        attack.attackCollider = attackCollider;
     }
 
     // Update is called once per frame
