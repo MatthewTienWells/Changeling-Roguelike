@@ -22,7 +22,7 @@ void Awake()
     public OnEquipmentChanged onEquipmentChanged;
 
     Iventory inventory;
-
+    // this starts the inventory instance 
     void Start()
     {
         inventory = inventory.instace;
@@ -31,7 +31,7 @@ void Awake()
          int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
          currentEquipment = new Equipment[numSlots];
     }
-
+    // this adddes any times you pick up to the enventory array list 
     public void equip (Equipment newItem)
     {
         int slotIndex = (int)newItem.EquipSlot;
@@ -39,12 +39,12 @@ void Awake()
         Equipment oldItem = null;
 
         if (currentEquipment[slotIndex] != null ) 
-        {
+        {// add unequiped item back to inventory 
             oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
         }
         if (onEquipmentChanged != null )
-        {
+        {// item switch say for a helmet switch old item with new item 
             onEquipmentChanged.Invoke(newItem, oldItem);
         }
 
@@ -55,9 +55,9 @@ void Awake()
     {
         RemoveFromInventory.instance.remove(this);
     }
-
+        // the fuction for automaticly unequiping items 
     public void Unequip (int slotIndex)
-    {
+    {// slot index is calling the array that the items sit in 
         if (currentEquipment[slotIndex] != null)
         {
             Equipment oldItem = currentEquipment[slotIndex];
@@ -71,6 +71,7 @@ void Awake()
         }
         }
     }
+    // for Unequiping the items 
     public void UnequipAll ()
     {
         for (int i = 0; i < currentEquipment.Length; i++)
@@ -79,7 +80,7 @@ void Awake()
         }
         
     }
-
+// to update the inventory 
     void Update ()
     {
         if (Input.GetKeyDown(KeyCode.U))
