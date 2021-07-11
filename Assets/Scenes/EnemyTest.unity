@@ -291,7 +291,7 @@ MonoBehaviour:
   max_health: 50
   health: 50
   defense: 0
-  speed: 1
+  speed: 10
   base_attack: 5
   resistances: []
   attacks: []
@@ -335,7 +335,7 @@ MonoBehaviour:
   max_health: 50
   health: 50
   defense: 0
-  speed: 3
+  speed: 15
   base_attack: 5
   resistances: []
   attacks: []
