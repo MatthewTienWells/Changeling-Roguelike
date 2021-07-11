@@ -118,13 +118,11 @@ public class Attack : MonoBehaviour
             Combatant target = other.GetComponent<Combatant>();
             if (target.resistances.Contains(damage_type) && damage_modifier * parent.base_attack > target.defense)
             {
-                target.health -= damage_modifier * parent.base_attack - target.defense;
-                target.TakeDamage();
+                target.TakeDamage(damage_modifier * parent.base_attack - target.defense);
             }
             else
             {
-                target.health -= damage_modifier * parent.base_attack;
-                target.TakeDamage();
+                target.TakeDamage(damage_modifier * parent.base_attack);
             }
             age = duration;
         }

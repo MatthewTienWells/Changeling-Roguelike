@@ -103,8 +103,17 @@ public class Combatant : MonoBehaviour
     }
 
     //Show animation for taking damage, check if combatant has died
-    public void TakeDamage()
+    public void TakeDamage(int damage_value)
     {
-
+        if (health <= damage_value)
+        {
+            //If the combatant's health has been fully drained, remove them from play
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            //Reduce the combatant's current health
+            health -= damage_value;
+        }
     }
 }
