@@ -47,6 +47,8 @@ public class ItemCollider : MonoBehaviour
                 //Increase player's health either by the recovery value or to max, whichever is less.
                 player.health = Mathf.Min(player.health + recovery, player.max_health);
             }
+            //Despawn the item after the player picks it up
+            Destroy(this.gameObject);
         }
     }
 }
