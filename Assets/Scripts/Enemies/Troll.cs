@@ -19,6 +19,7 @@ public class Troll : Enemy
         melee.damage_type = "bludgeoning"; //Reflects the damage being a bite
         melee.damage_modifier = 4;
         melee.shape = "melee";
+        melee.special = true;
         speed = 2;
         resistances.Add("bludgeoning");
         defense = 5;

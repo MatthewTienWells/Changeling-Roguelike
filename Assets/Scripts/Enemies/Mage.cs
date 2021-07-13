@@ -22,6 +22,7 @@ public class Mage : Enemy
         spell.radius = 2;
         spell.range = 5;
         spell.duration = 500;
+        spell.special = true;
         speed = 4;
     }
 

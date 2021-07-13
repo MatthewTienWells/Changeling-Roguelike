@@ -18,6 +18,7 @@ public class Ranger : Enemy
         ranged.damage_type = "piercing"; //Reflects the damage being a bite
         ranged.damage_modifier = 3;
         ranged.shape = "directional";
+        ranged.special = true;
         speed = 1;
     }
 
