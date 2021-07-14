@@ -15,7 +15,7 @@ public class Ranger : Enemy
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Attack ranged = new Attack(); //Create a melee attack
         ranged.attackCollider = rangedAttack; //Set collider template
-        ranged.damage_type = "piercing"; //Reflects the damage being a bite
+        ranged.damage_type = "piercing"; //Reflects the damage being a bowshot
         ranged.damage_modifier = 3;
         ranged.shape = "directional";
         ranged.special = true;

@@ -16,7 +16,7 @@ public class Troll : Enemy
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Attack melee = new Attack(); //Create a melee attack
         melee.attackCollider = meleeAttack; //Set collider template
-        melee.damage_type = "bludgeoning"; //Reflects the damage being a bite
+        melee.damage_type = "bludgeoning"; //Reflects the damage being a smash
         melee.damage_modifier = 4;
         melee.shape = "melee";
         melee.special = true;

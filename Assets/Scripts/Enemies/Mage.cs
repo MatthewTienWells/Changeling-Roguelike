@@ -16,7 +16,7 @@ public class Mage : Enemy
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Attack spell = new Attack(); //Create a melee attack
         spell.attackCollider = magicAttack; //Set collider template
-        spell.damage_type = "heat"; //Reflects the damage being a bite
+        spell.damage_type = "heat"; //Reflects the damage being a fireball
         spell.damage_modifier = 3;
         spell.shape = "area";
         spell.radius = 2;
