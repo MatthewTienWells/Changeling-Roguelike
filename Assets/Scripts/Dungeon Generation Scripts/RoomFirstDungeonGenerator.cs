@@ -222,7 +222,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             //get the first room in the list and set it as our spawn point
             var spawnPoint = roomList.ElementAt(0).center;
             //spawn the player's controller
-            GameObject _pController = Instantiate<GameObject>(playerController, spawnPoint + new Vector3(0, 0, 1), Quaternion.identity);
+            GameObject _pController = Instantiate<GameObject>(playerController, spawnPoint, Quaternion.identity);
         }
         //otherwise
         else
