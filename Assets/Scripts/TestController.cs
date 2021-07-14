@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TestController : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject player;
+    //player pawn
     public Pawn pawn;
     //store movement data
     public Vector2 movement;
@@ -20,6 +23,12 @@ public class TestController : MonoBehaviour
         //set movement x and y values to appropriate axis
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
+
+        if (pawn == null) 
+        {
+            GameObject _player = Instantiate<GameObject>(player, transform.position, Quaternion.identity);
+            pawn = _player.GetComponent<Pawn>();
+        }
     }
 
     private void FixedUpdate()

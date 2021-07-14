@@ -11,16 +11,23 @@ public class CameraManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        offset = transform.position - target.position;
-
+     
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
+    }
     void FixedUpdate()
     {
-        Vector3 targetCamPos = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
-
+        if (target)
+        {
+            Vector3 targetCamPos = target.position + offset;
+            transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime); 
+        }
     }
 }
     

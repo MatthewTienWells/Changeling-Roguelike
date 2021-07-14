@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
-    [SerializeField]
+    [Header("Generation Data"), SerializeField]
     private int minRoomWidth = 4, minRoomHeight = 4;
     [SerializeField]
     private int dungeonWidth = 20, dungeonHeight = 20;
@@ -15,6 +16,12 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private int offset = 1;
     [SerializeField]
     private bool usingRandomWalkRooms = false;
+    [Header("Game Data"), SerializeField]
+    private bool isGameStart = true;
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private GameObject playerController;
 
     protected override void RunProceduralGeneration()
     {
@@ -40,6 +47,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             //create simple square rooms and add them to our floor set
             floor = CreateSimpleRooms(roomsList); 
         }
+        //spawn the player
+        SpawnPlayer(roomsList);
         //create a list to store room centers for corridor connection later
         List<Vector2Int> roomCenters = new List<Vector2Int>();
         //for each room in the list of rooms
@@ -56,6 +65,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         tilemapVisualizer.PaintFloorTiles(floor);
         //pass our wall generator our floors and tilemap visualizer
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
+        //tell the program it is not the start of the game anymore
+        isGameStart = false;
     }
 
     private HashSet<Vector2Int> CreateRandomWalkRooms(List<BoundsInt> roomsList)
@@ -200,5 +211,46 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             }
         }
         return floor;
+    }
+
+    private void SpawnPlayer(List<BoundsInt> roomList) 
+    {
+        //check if it is the first level or not
+        if (isGameStart)
+        {
+            //if it is
+            //get the first room in the list and set it as our spawn point
+            var spawnPoint = roomList.ElementAt(0).center;
+            //spawn the player's controller
+            GameObject _pController = Instantiate<GameObject>(playerController, spawnPoint + new Vector3(0, 0, 1), Quaternion.identity);
+        }
+        //otherwise
+        else
+        {
+            //get the player's sprite renderer
+            SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
+            //get the player's collider
+            Collider2D col = player.GetComponent<Collider2D>();
+            //disable them
+            sr.enabled = false;
+            col.enabled = false;
+            //get the first room in the list and set it as our spawn point
+            var spawnPoint = roomList.ElementAt(0).center;
+            //move the player there
+            player.transform.position = spawnPoint;
+            //enable previously disabled components
+            sr.enabled = true;
+            col.enabled = true;
+        }
+    }
+
+    private void SpawnEnemies(List<BoundsInt> roomsList) 
+    {
+        
+    }
+
+    private void CreateLevelEnd(List<BoundsInt> roomsList) 
+    {
+        
     }
 }
