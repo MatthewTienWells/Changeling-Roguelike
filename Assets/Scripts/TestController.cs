@@ -20,6 +20,7 @@ public class TestController : MonoBehaviour
         //set movement x and y values to appropriate axis
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
+        movement = Vector2.Lerp(transform.position, Input.mousePosition, 1);
     }
 
     private void FixedUpdate()

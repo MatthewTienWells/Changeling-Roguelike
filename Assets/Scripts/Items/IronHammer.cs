@@ -14,6 +14,7 @@ public class IronHammer : ItemCollider
         attack.radius = 2;
         attack.duration = 1000;
         attack.attackCollider = attackCollider;
+        attack.tier = 1;
     }
 
     // Update is called once per frame

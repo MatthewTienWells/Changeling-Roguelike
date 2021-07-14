@@ -14,6 +14,7 @@ public class IronSword : ItemCollider
         attack.damage_modifier = 2;
         attack.duration = 500;
         attack.attackCollider = attackCollider;
+        attack.tier = 1;
     }
 
     // Update is called once per frame

@@ -16,6 +16,7 @@ public class Wand : ItemCollider
         attack.radius = 2;
         attack.duration = 3000;
         attack.attackCollider = attackCollider;
+        attack.tier = 1;
     }
 
     // Update is called once per frame
