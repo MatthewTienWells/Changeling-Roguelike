@@ -42,6 +42,8 @@ public class Attack : MonoBehaviour
     //Integer representing the tier of the attack- if the player has this attack, and gains an item that allows an attack with
     //the same shape and damage type, this attack will be replaced if the new attack has a higher tier.
     public int tier = 0;
+    //Boolean representing whether this attack is exclusive to an enemy form, rather than being given by an item
+    public bool special = false;
 
     //Function returns if an attack will hit a given target from a given location
     public bool canHit(float pawnLocationX, float selfLocationX, float pawnLocationY, float selfLocationY)

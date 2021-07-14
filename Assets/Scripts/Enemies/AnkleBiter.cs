@@ -20,6 +20,7 @@ public class Enemy_AnkleBiter : Enemy
         melee.damage_modifier = 2;
         melee.shape = "melee";
         melee.radius = 1;
+        melee.special = true;
         speed = 2;
     }
 

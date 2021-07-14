@@ -15,6 +15,7 @@ public class IronBow : ItemCollider
         attack.shape = "directional";
         attack.duration = 10000;
         attack.attackCollider = attackCollider;
+        attack.tier = 1;
     }
 
     // Update is called once per frame
