@@ -47,8 +47,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             //create simple square rooms and add them to our floor set
             floor = CreateSimpleRooms(roomsList); 
         }
-        //spawn the player
-        SpawnPlayer(roomsList);
         //create a list to store room centers for corridor connection later
         List<Vector2Int> roomCenters = new List<Vector2Int>();
         //for each room in the list of rooms
@@ -65,6 +63,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         tilemapVisualizer.PaintFloorTiles(floor);
         //pass our wall generator our floors and tilemap visualizer
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
+        //spawn the player
+        SpawnPlayer(floor);
         //tell the program it is not the start of the game anymore
         isGameStart = false;
     }
@@ -213,16 +213,20 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         return floor;
     }
 
-    private void SpawnPlayer(List<BoundsInt> roomList) 
+    private void SpawnPlayer(HashSet<Vector2Int> floors)
     {
+        //conver the hash set to a list and sort it
+        List<Vector2Int> floorsList = floors.ToList<Vector2Int>();
         //check if it is the first level or not
         if (isGameStart)
         {
             //if it is
             //get the first room in the list and set it as our spawn point
-            var spawnPoint = roomList.ElementAt(0).center;
+            Vector2Int spawnPoint = floors.ElementAt(Random.Range(0, floors.Count));
             //spawn the player's controller
-            GameObject _pController = Instantiate<GameObject>(playerController, spawnPoint, Quaternion.identity);
+            GameObject _pController = Instantiate<GameObject>(playerController, new Vector3(spawnPoint.x, spawnPoint.y, 0), Quaternion.identity);
+            Debug.Log("Game Start player position: " + _pController.transform.position);
+            Debug.Log("Game Start: " + spawnPoint);
         }
         //otherwise
         else
@@ -235,12 +239,14 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             sr.enabled = false;
             col.enabled = false;
             //get the first room in the list and set it as our spawn point
-            var spawnPoint = roomList.ElementAt(0).center;
+            var spawnPoint = floors.ElementAt(Random.Range(0, floors.Count));
             //move the player there
-            player.transform.position = spawnPoint;
+            player.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, 0);
             //enable previously disabled components
             sr.enabled = true;
             col.enabled = true;
+            Debug.Log("Not Game Start player position: " + player.transform.position);
+            Debug.Log("Not Game Start: " + spawnPoint);
         }
     }
 

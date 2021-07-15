@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public Transform target;
-    public float smoothing = 5f;
-    Vector3 offset;
+    private Transform target;
+    [SerializeField]
+    private float smoothing = 5f;
+    [SerializeField]
+    private Vector3 offset;
 
     // Use this for initialization
     void Start()
