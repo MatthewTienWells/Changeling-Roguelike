@@ -61,3 +61,15 @@ Library/ArtifactDB
 Library/ArtifactDB-lock
 Library/SourceAssetDB
 Library/SourceAssetDB-lock
+Library/ArtifactDB
+Library/ArtifactDB-lock
+Library/SceneVisibilityState.asset
+Library/ScriptAssemblies/Unity.Rider.Editor.dll
+Library/ScriptAssemblies/Unity.Rider.Editor.pdb
+Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+Library/ScriptAssemblies/Unity.VSCode.Editor.pdb
+Library/ScriptAssemblies/UnityEditor.UI.dll
+Library/ScriptAssemblies/UnityEditor.UI.pdb
+Library/SourceAssetDB
+Library/SourceAssetDB-lock
+Library/Style.catalog
