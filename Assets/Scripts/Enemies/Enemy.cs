@@ -48,11 +48,7 @@ public class Enemy : Combatant
         }
     }
 
-    //Moves according to the comabt movement AI
-    private void CombatMovement() 
-    {
-
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -66,7 +62,7 @@ public class Enemy : Combatant
             }
             else
             {
-                CombatMovement();
+                //CombatMovement();
             }
         }
         else

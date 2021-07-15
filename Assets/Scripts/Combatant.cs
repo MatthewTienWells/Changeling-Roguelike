@@ -43,6 +43,14 @@ public class Combatant : MonoBehaviour
     //Bool representing if the Combatant is engaging the player
     private bool inCombat = false;
 
+    [Header("Components")]
+    //for pawn's animator
+    public Animator anim;
+    //game object's sprite renderer
+    public SpriteRenderer sr;
+    // reference to rigid body for player movement 
+    protected Rigidbody2D rb;
+
     //Function takes a location for the player and the location of the comabatant and test if the player is currently detected
     public bool checkForPlayer(float pawnLocationX, float selfLocationX, float pawnLocationY, float selfLocationY)
     {
@@ -90,7 +98,9 @@ public class Combatant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -100,6 +110,7 @@ public class Combatant : MonoBehaviour
         {
             cooldownTimer ++;
         }
+
     }
 
     //Show animation for taking damage, check if combatant has died
@@ -115,5 +126,20 @@ public class Combatant : MonoBehaviour
             //Reduce the combatant's current health
             health -= damage_value;
         }
+    }
+
+    //Moves according to the comabt movement AI
+    public void CombatMovement(Vector2 direction)
+    {
+        //move the rigidbody by Vector 2 multiplied by speed.
+        rb.velocity = new Vector2(direction.x * speed * Time.fixedDeltaTime, direction.y * speed * Time.fixedDeltaTime);
+
+    }
+
+    public void SetAnimations(Vector2 movement)
+    {
+        anim.SetFloat("Horizontal", movement.x); //pass x to animator horizontal
+        anim.SetFloat("Vertical", movement.y); //pass y to animator vertical
+        anim.SetFloat("Speed", movement.sqrMagnitude); //pass magnitude to animator
     }
 }
