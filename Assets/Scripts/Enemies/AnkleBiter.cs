@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_AnkleBiter : Enemy
+public class AnkleBiter : Enemy
 {
     private Transform target;
     public float runDistance = 1f;

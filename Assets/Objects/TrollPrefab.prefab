@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 3735965308683768931}
   - component: {fileID: -7474470515815679267}
   - component: {fileID: 2630415380409483180}
-  - component: {fileID: 7031199777993937287}
-  - component: {fileID: 8352848833537841187}
+  - component: {fileID: 9081390152775253381}
   m_Layer: 0
-  m_Name: Troll
+  m_Name: TrollPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +125,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7031199777993937287
+--- !u!114 &9081390152775253381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,25 +134,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8997331124596448046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c90b2ccf6f2ce4a83adb5944cc48a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pawn: {fileID: 8352848833537841187}
-  movement: {x: 0, y: 0}
---- !u!114 &8352848833537841187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8997331124596448046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015d5ee547780024f85cb041ec464b19, type: 3}
+  m_Script: {fileID: 11500000, guid: 90eafd0dfca3826488bcd108bac30eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2630415380409483180}
   rb: {fileID: -7474470515815679267}
-  sr: {fileID: 3735965308683768931}
-  pc: {fileID: 7031199777993937287}
-  moveSpeed: 85
+  max_health: 50
+  health: 50
+  defense: 0
+  speed: 1
+  base_attack: 5
+  resistances: []
+  attacks: []
+  cooldown: 1000
+  pawnTransform: {fileID: 3934604912089081091}
+  runDistance: 4
+  meleeAttack: {fileID: 0}

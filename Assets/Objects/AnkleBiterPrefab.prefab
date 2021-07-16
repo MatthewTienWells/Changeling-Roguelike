@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: -401823223516250054}
   - component: {fileID: -754311938808462699}
   - component: {fileID: -3840973272399213500}
-  - component: {fileID: -5226952117957653976}
-  - component: {fileID: -8734225411547644837}
+  - component: {fileID: 6531701146915420735}
   m_Layer: 0
   m_Name: AnkleBiterPrefab
   m_TagString: Untagged
@@ -126,7 +125,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5226952117957653976
+--- !u!114 &6531701146915420735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,25 +134,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4408885379204864442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015d5ee547780024f85cb041ec464b19, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a94baf1d2a7ade43b8fffad11638dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: -754311938808462699}
   rb: {fileID: -401823223516250054}
-  sr: {fileID: -3840973272399213500}
-  pc: {fileID: -8734225411547644837}
-  moveSpeed: 110
---- !u!114 &-8734225411547644837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4408885379204864442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c90b2ccf6f2ce4a83adb5944cc48a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pawn: {fileID: -5226952117957653976}
-  movement: {x: 0, y: 0}
+  max_health: 50
+  health: 50
+  defense: 0
+  speed: 1
+  base_attack: 5
+  resistances: []
+  attacks: []
+  cooldown: 1000
+  pawnTransform: {fileID: 2796433186078072168}
+  runDistance: 1
+  meleeAttack: {fileID: 0}

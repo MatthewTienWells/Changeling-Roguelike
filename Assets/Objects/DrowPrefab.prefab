@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 7572855490665990953}
   - component: {fileID: -299296926037538192}
   - component: {fileID: 8839057622749977883}
-  - component: {fileID: 6160190710616477600}
-  - component: {fileID: 1824021618788752090}
+  - component: {fileID: -2619345084576941717}
   m_Layer: 0
   m_Name: DrowPrefab
   m_TagString: Untagged
@@ -126,7 +125,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6160190710616477600
+--- !u!114 &-2619345084576941717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,25 +134,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1035044813323207063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015d5ee547780024f85cb041ec464b19, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f14cd625b9a3c04f8d6d4c3ad72e004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: -299296926037538192}
   rb: {fileID: 8839057622749977883}
-  sr: {fileID: 7572855490665990953}
-  pc: {fileID: 1824021618788752090}
-  moveSpeed: 100
---- !u!114 &1824021618788752090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035044813323207063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c90b2ccf6f2ce4a83adb5944cc48a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pawn: {fileID: 6160190710616477600}
-  movement: {x: 0, y: 0}
+  max_health: 50
+  health: 50
+  defense: 0
+  speed: 1
+  base_attack: 5
+  resistances: []
+  attacks: []
+  cooldown: 1000
+  pawnTransform: {fileID: 8414325329481069080}
+  fleeDistance: 3
+  rangedAttack: {fileID: 0}
