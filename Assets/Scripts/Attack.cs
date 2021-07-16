@@ -37,7 +37,7 @@ public class Attack : MonoBehaviour
     public bool isActive = false;
 
     //Current age of the attack- when this is equal to the duration, the attack is destroyed
-    private int age = 0;
+    public int age = 0;
 
     //Integer representing the tier of the attack- if the player has this attack, and gains an item that allows an attack with
     //the same shape and damage type, this attack will be replaced if the new attack has a higher tier.
