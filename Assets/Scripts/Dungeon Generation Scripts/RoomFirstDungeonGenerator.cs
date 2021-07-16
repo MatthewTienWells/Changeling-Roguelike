@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
-    [SerializeField]
+    [Header("Generation Data"), SerializeField]
     private int minRoomWidth = 4, minRoomHeight = 4;
     [SerializeField]
     private int dungeonWidth = 20, dungeonHeight = 20;
@@ -15,6 +16,12 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private int offset = 1;
     [SerializeField]
     private bool usingRandomWalkRooms = false;
+    [Header("Game Data"), SerializeField]
+    private bool isGameStart = true;
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private GameObject playerController;
 
     protected override void RunProceduralGeneration()
     {
@@ -56,6 +63,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         tilemapVisualizer.PaintFloorTiles(floor);
         //pass our wall generator our floors and tilemap visualizer
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
+        //spawn the player
+        SpawnPlayer(floor);
+        //tell the program it is not the start of the game anymore
+        isGameStart = false;
     }
 
     private HashSet<Vector2Int> CreateRandomWalkRooms(List<BoundsInt> roomsList)
@@ -200,5 +211,52 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             }
         }
         return floor;
+    }
+
+    private void SpawnPlayer(HashSet<Vector2Int> floors)
+    {
+        //conver the hash set to a list and sort it
+        List<Vector2Int> floorsList = floors.ToList<Vector2Int>();
+        //check if it is the first level or not
+        if (isGameStart)
+        {
+            //if it is
+            //get the first room in the list and set it as our spawn point
+            Vector2Int spawnPoint = floors.ElementAt(Random.Range(0, floors.Count));
+            //spawn the player's controller
+            GameObject _pController = Instantiate<GameObject>(playerController, new Vector3(spawnPoint.x, spawnPoint.y, 0), Quaternion.identity);
+            Debug.Log("Game Start player position: " + _pController.transform.position);
+            Debug.Log("Game Start: " + spawnPoint);
+        }
+        //otherwise
+        else
+        {
+            //get the player's sprite renderer
+            SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
+            //get the player's collider
+            Collider2D col = player.GetComponent<Collider2D>();
+            //disable them
+            sr.enabled = false;
+            col.enabled = false;
+            //get the first room in the list and set it as our spawn point
+            var spawnPoint = floors.ElementAt(Random.Range(0, floors.Count));
+            //move the player there
+            player.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, 0);
+            //enable previously disabled components
+            sr.enabled = true;
+            col.enabled = true;
+            Debug.Log("Not Game Start player position: " + player.transform.position);
+            Debug.Log("Not Game Start: " + spawnPoint);
+        }
+    }
+
+    private void SpawnEnemies(List<BoundsInt> roomsList) 
+    {
+        
+    }
+
+    private void CreateLevelEnd(List<BoundsInt> roomsList) 
+    {
+        
     }
 }
