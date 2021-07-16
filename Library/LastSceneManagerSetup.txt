@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/EnemyTest.unity
-=======
 - path: Assets/Scenes/PrefabsAndPauseMenu.unity
->>>>>>> Art/PauseMenu/Prefabs/Animations
   isLoaded: 1
   isActive: 1
   isSubScene: 0
