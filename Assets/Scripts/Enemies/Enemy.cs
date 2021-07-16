@@ -6,18 +6,11 @@ using UnityEngine;
 public class Enemy : Combatant
 {
     [SerializeField] Transform pawnTransform;
-    [SerializeField] Animator enemyAnim;
-    [SerializeField] public Rigidbody2D enemyRb;
-    SpriteRenderer enemySR;
 
     // Start is called before the first frame update
     void Start()
     {
         pawnTransform = FindObjectOfType<Pawn>().GetComponent<Transform>();
-      //enemy animation and sprite renderer 
-        enemyAnim = gameObject.GetComponent<Animator>();
-        enemySR = GetComponent<SpriteRenderer>();
-        enemyRb = GetComponent<Rigidbody2D>();
     }
 
     //Checks if the player is in the range of an attack, and, if so, attacks. Returns true if an attack was executed, false otherwise.
@@ -71,7 +64,7 @@ public class Enemy : Combatant
         }
         else
         {
-            enemyAnim.SetBool("Walking", false);
+            anim.SetBool("Walking", false);
         }
 
     }

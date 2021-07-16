@@ -4,73 +4,30 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Combatant player;
+    public PlayerCombatant player;
     //store movement data
     public Vector2 movement;
-
-    //Rigidbody for the player's melee attack
-    public Rigidbody meleeAttack;
-    //Rigidbody for the player's default directional attack
-    public Rigidbody bowAttack;
-    //Boolean representing if we are loading player stats from a save file
-    private bool loadStats = false;
     //Index of the attack the player is using currently
     private int loadedAttack = 0;
     //Index of secondary attack to swap to
     private int secondAttack = 1;
     //Copies the characteristics of the enemy provided
-    void Copy(Combatant target)
+    void ResetAttacks()
     {
-        max_health = target.max_health;
-        speed = target.speed;
-        defense = target.defense;
-        resistances = target.resistances;
-        base_attack = target.base_attack;
-        cooldown = target.cooldown;
-        foreach (Attack curAttack in attacks)
+        if (player.attacks.Count > loadedAttack)
         {
-            if (curAttack.special)
-            {
-                attacks.Remove(curAttack);
-            }
+            loadedAttack = player.attacks.Count;
         }
-        attacks.AddRange(target.attacks);
-        gameObject.GetComponent<Animator>().runtimeAnimatorController = target.gameObject.GetComponent<Animator>().runtimeAnimatorController;
-        if (attacks.Count > loadedAttack)
+        if (player.attacks.Count > secondAttack)
         {
-            loadedAttack = attacks.Count;
+            secondAttack = player.attacks.Count;
         }
-        if (attacks.Count > secondAttack)
-        {
-            secondAttack = attacks.Count;
-        }
-    }
-
-    void setStatsFromFile()
-    {
-
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Attack melee = new Attack(); //Create a melee attack
-        melee.attackCollider = meleeAttack; //Set collider template
-        melee.damage_type = "slashing"; //Reflects the damage being a bite
-        melee.damage_modifier = 2;
-        melee.shape = "melee";
-        melee.radius = 0.5;
-        Attack ranged = new Attack(); //Create a melee attack
-        ranged.attackCollider = bowAttack; //Set collider template
-        ranged.damage_type = "piercing"; //Reflects the damage being a bowshot
-        ranged.damage_modifier = 1;
-        ranged.shape = "directional";
-        attacks.Add(melee);
-        attacks.Add(ranged); //Add basic melee and ranged attacks to the player
-        if (loadStats)
-        {
-            setStatsFromFile();
-        }
+        player = new PlayerCombatant();
     }
 
     // Update is called once per frame
@@ -83,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("Fire1"))
         {
-            attacks[loadedAttack].TriggerAttack();
+            player.attacks[loadedAttack].TriggerAttack();
         }
 
         if (Input.GetKeyDown("Fire2"))
@@ -93,7 +50,7 @@ public class PlayerController : MonoBehaviour
             secondAttack = swap;
         }
 
-        if (Input.mouseScrollDelta.y > 0 && loadedAttack < attacks.Count)
+        if (Input.mouseScrollDelta.y > 0 && loadedAttack < player.attacks.Count)
         {
             loadedAttack += 1;
         }
@@ -102,10 +59,5 @@ public class PlayerController : MonoBehaviour
         {
             loadedAttack -= 1;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        player.CombatMovement(movement);
     }
 }

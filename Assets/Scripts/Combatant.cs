@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Combatant : MonoBehaviour
 {
+    [SerializeField] public Animator anim;
+    [SerializeField] public Rigidbody2D rb;
+    SpriteRenderer sr;
+
     //Maximum health of combatant
     public int max_health = 50;
+
+
 
     //Current health of combatant
     public int health = 50;
@@ -90,7 +96,10 @@ public class Combatant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //enemy animation and sprite renderer 
+        anim = gameObject.GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -100,6 +109,13 @@ public class Combatant : MonoBehaviour
         {
             cooldownTimer ++;
         }
+    }
+
+    public void SetAnimations(Vector2 movement)
+    {
+        anim.SetFloat("Horizontal", movement.x); //pass x to animator horizontal
+        anim.SetFloat("Vertical", movement.y); //pass y to animator vertical
+        anim.SetFloat("Speed", movement.sqrMagnitude); //pass magnitude to animator
     }
 
     //Show animation for taking damage, check if combatant has died

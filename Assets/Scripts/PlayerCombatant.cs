@@ -2,21 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTransform : Combatant
+public class PlayerCombatant : Combatant
 {
 
     //Store movement data
     public Vector2 movement;
-    //Representation of the player pawn
-    public Pawn pawn;
+    
     //Rigidbody for the player's default melee attack
     public Rigidbody meleeAttack;
     //Rigidbody for the player's default directional attack
     public Rigidbody bowAttack;
     //Boolean representing if we are loading player stats from a save file
     private bool loadStats = false;
-    //Index of the attack the player is using currently
-    private int loadedAttack = 0;
     //Copies the characteristics of the enemy provided
     void Copy(Combatant target)
     {
@@ -67,23 +64,6 @@ public class PlayerTransform : Combatant
     // Update is called once per frame
     void Update()
     {
-        movement = Vector2.Lerp(transform.position, Input.mousePosition, speed); //Set movement towards the mouse cursor
-        if (Input.GetMouseButtonDown(0) && !onCooldown()) //If the player is clicking and has an attack ready
-        {
-            if (loadedAttack > attacks.Count) //MAke sure that the attack index exists
-            {
-                loadedAttack = 0; //Reset the index to 0 if it doesn't
-            }
-            attacks[loadedAttack].TriggerAttack(); //Execute the current attack
-        }
-        if (Input.GetMouseButtonDown(1)) //IF the player is clicking the other mouse button
-        {
-            loadedAttack += 1; //Increment the active attack to the next known attack
-        }
-    }
 
-    private void FixedUpdate()
-    {
-        pawn.Move(movement); //Move towards the given location
     }
 }
