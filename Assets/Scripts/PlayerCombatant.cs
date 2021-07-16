@@ -15,7 +15,7 @@ public class PlayerCombatant : Combatant
     //Boolean representing if we are loading player stats from a save file
     private bool loadStats = false;
     //Copies the characteristics of the enemy provided
-    void Copy(Combatant target)
+    new public void Copy(Combatant target)
     {
         max_health = target.max_health;
         speed = target.speed;
@@ -53,12 +53,14 @@ public class PlayerCombatant : Combatant
         ranged.damage_type = "piercing"; //Reflects the damage being a bowshot
         ranged.damage_modifier = 1;
         ranged.shape = "directional";
+        attacks.Add(new CopyAttack()); //Add the copy ability to known attacks
         attacks.Add(melee);
         attacks.Add(ranged); //Add basic melee and ranged attacks to the player
         if (loadStats)
         {
             setStatsFromFile();
         }
+        this.gameObject.tag = "Player";
     }
 
     // Update is called once per frame

@@ -100,6 +100,7 @@ public class Combatant : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        this.gameObject.tag = "Combatant";
     }
 
     // Update is called once per frame
@@ -131,5 +132,10 @@ public class Combatant : MonoBehaviour
             //Reduce the combatant's current health
             health -= damage_value;
         }
+    }
+
+    public void Copy(Combatant target)
+    {
+
     }
 }
