@@ -6,7 +6,7 @@ public class Ranger : Enemy
     private Transform target;
     public float fleeDistance = 3f;
     //Rigidbody for the anklebiter's melee attack
-    public Rigidbody rangedAttack;
+    public GameObject rangedAttack;
 
     // Start is called before the first frame update
     void Start()

@@ -5,10 +5,10 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     //Collidable rigidbody for the attack
-    public Rigidbody attackCollider;
+    public GameObject attackCollider;
     
     //Duplicate rigidbody that is cloned and then destroyed when the attack is used
-    private Rigidbody duplicateBody;
+    private GameObject duplicateBody;
     //Damage type dealt by this attack- piercing, slashing, bludgeoning, heat
     public string damage_type = "piercing";
 
@@ -85,10 +85,11 @@ public class Attack : MonoBehaviour
         if (shape == "area")
         {
             transform.position += transform.forward * range;
+            transform.rotation = parent.transform.rotation;
         }
         else if (shape == "directional")
         {
-            duplicateBody.velocity = transform.forward*speed;
+            duplicateBody.GetComponent<Rigidbody2D>().velocity = transform.forward*speed;
         }
     }
 
@@ -108,7 +109,6 @@ public class Attack : MonoBehaviour
         if (age > duration)
         {
             Destroy(duplicateBody);
-            duplicateBody = new Rigidbody();
         }
     }
 

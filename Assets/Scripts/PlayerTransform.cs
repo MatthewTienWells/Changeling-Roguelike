@@ -10,9 +10,9 @@ public class PlayerTransform : Combatant
     //Representation of the player pawn
     public Pawn pawn;
     //Rigidbody for the player's default melee attack
-    public Rigidbody meleeAttack;
+    public GameObject meleeAttack;
     //Rigidbody for the player's default directional attack
-    public Rigidbody bowAttack;
+    public GameObject bowAttack;
     //Boolean representing if we are loading player stats from a save file
     private bool loadStats = false;
     //Index of the attack the player is using currently

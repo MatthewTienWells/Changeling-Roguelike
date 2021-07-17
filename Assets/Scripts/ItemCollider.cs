@@ -12,7 +12,7 @@ public class ItemCollider : MonoBehaviour
     //Attack that this item unlocks if it is a weapon
     public Attack attack;
     //Collider for attack if this item is a weapon
-    public Rigidbody attackCollider;
+    public GameObject attackCollider;
 
     //When the player picks up the item
     private void OnCollisionEnter (Collision collision)

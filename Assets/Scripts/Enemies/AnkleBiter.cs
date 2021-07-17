@@ -7,7 +7,7 @@ public class Enemy_AnkleBiter : Enemy
     private Transform target;
     public float runDistance = 1f;
     //Rigidbody for the anklebiter's melee attack
-    public Rigidbody meleeAttack;
+    public GameObject meleeAttack;
 
     // Start is called before the first frame update
     void Start()
