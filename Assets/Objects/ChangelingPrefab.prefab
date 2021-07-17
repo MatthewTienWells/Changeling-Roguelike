@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 3002557597837976836}
   - component: {fileID: 7952038743507835532}
   - component: {fileID: 7492400048907963611}
-  - component: {fileID: 3086662909782591642}
-  - component: {fileID: 3828978587055904708}
   - component: {fileID: -9130312786503437088}
+  - component: {fileID: -2553769984455192291}
   m_Layer: 0
-  m_Name: PlayerAnimationTester
+  m_Name: ChangelingPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7000120738982867085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: 20, z: 0}
+  m_LocalPosition: {x: 29, y: 19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,38 +126,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3086662909782591642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7000120738982867085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015d5ee547780024f85cb041ec464b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 7952038743507835532}
-  rb: {fileID: 7492400048907963611}
-  sr: {fileID: 3002557597837976836}
-  pc: {fileID: 3828978587055904708}
-  moveSpeed: 100
---- !u!114 &3828978587055904708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7000120738982867085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c90b2ccf6f2ce4a83adb5944cc48a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  pawn: {fileID: 3086662909782591642}
-  movement: {x: 0, y: 0}
 --- !u!61 &-9130312786503437088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,3 +152,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.8773346}
   m_EdgeRadius: 0
+--- !u!114 &-2553769984455192291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000120738982867085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a891a12d598ee43a32360cb71bde72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 7952038743507835532}
+  rb: {fileID: 7492400048907963611}
+  max_health: 50
+  health: 50
+  defense: 0
+  speed: 100
+  base_attack: 5
+  resistances: []
+  attacks: []
+  cooldown: 1000
+  movement: {x: 0, y: 0}
+  meleeAttack: {fileID: 0}
+  bowAttack: {fileID: 0}

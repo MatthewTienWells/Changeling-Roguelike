@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //GameObject for spawning player at the beginning of game
+    [SerializeField]
+    private GameObject playerPrefab;
+    //store player combatant to pass inputs to
     public PlayerCombatant player;
     //store movement data
-    public Vector2 movement;
+    private Vector2 movement;
     //Index of the attack the player is using currently
     private int loadedAttack = 0;
     //Index of secondary attack to swap to
@@ -27,37 +31,45 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = new PlayerCombatant();
+        if (!player)
+        {
+            GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
+            player = newPlayer.GetComponent<PlayerCombatant>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //set movement x and y values to appropriate axis
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-        player.SetAnimations(movement);
-
-        if (Input.GetKeyDown("Fire1"))
+        if (player != null)
         {
-            player.attacks[loadedAttack].TriggerAttack();
-        }
+            //set movement x and y values to appropriate axis
+            movement.x = Input.GetAxis("Horizontal");
+            movement.y = Input.GetAxis("Vertical");
+            player.SetAnimations(movement);
+            player.Move(movement);
 
-        if (Input.GetKeyDown("Fire2"))
-        {
-            int swap = loadedAttack;
-            loadedAttack = secondAttack;
-            secondAttack = swap;
-        }
+            if (Input.GetButtonDown("Attack"))
+            {
+                player.attacks[loadedAttack].TriggerAttack();
+            }
 
-        if (Input.mouseScrollDelta.y > 0 && loadedAttack < player.attacks.Count)
-        {
-            loadedAttack += 1;
-        }
+            if (Input.GetButtonDown("SwitchAttacks"))
+            {
+                int swap = loadedAttack;
+                loadedAttack = secondAttack;
+                secondAttack = swap;
+            }
 
-        if (Input.mouseScrollDelta.y < 0 && loadedAttack > 0)
-        {
-            loadedAttack -= 1;
+            if (Input.mouseScrollDelta.y > 0 && loadedAttack < player.attacks.Count)
+            {
+                loadedAttack += 1;
+            }
+
+            if (Input.mouseScrollDelta.y < 0 && loadedAttack > 0)
+            {
+                loadedAttack -= 1;
+            }
         }
     }
 }

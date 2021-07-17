@@ -34,6 +34,12 @@ public class PlayerCombatant : Combatant
         gameObject.GetComponent<Animator>().runtimeAnimatorController = target.gameObject.GetComponent<Animator>().runtimeAnimatorController;
     }
 
+    public void Move(Vector2 direction)
+    {
+        //move the rigidbody by Vector 2 multiplied by speed.
+        rb.velocity = new Vector2(direction.x * speed * Time.fixedDeltaTime, direction.y * speed * Time.fixedDeltaTime);
+    }
+
     void setStatsFromFile()
     {
 

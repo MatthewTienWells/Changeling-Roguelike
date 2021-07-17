@@ -137,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 3679576441374211748, guid: 2f61376bf672e07448dd70b0718c2618, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 5146003154638072181, guid: 0474dd6c965d90546a162fd526f94af5, type: 3}
+      objectReference: {fileID: 2345639487251089676, guid: e56808bf5c2723342b314abd12feaff6, type: 3}
     - target: {fileID: 3679576441374211748, guid: 2f61376bf672e07448dd70b0718c2618, type: 3}
       propertyPath: tilemapVisualizer
       value: 

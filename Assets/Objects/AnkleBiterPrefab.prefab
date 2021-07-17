@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &-754311938808462699
 Animator:
   serializedVersion: 3
@@ -142,7 +142,7 @@ MonoBehaviour:
   max_health: 50
   health: 50
   defense: 0
-  speed: 1
+  speed: 150
   base_attack: 5
   resistances: []
   attacks: []
