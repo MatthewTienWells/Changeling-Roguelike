@@ -25,6 +25,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField]
     private List<GameObject> enemies;
     [SerializeField]
+    private List<GameObject> currentEnemies;
+    [SerializeField]
     private int maxEnemies = 10;
 
     protected override void RunProceduralGeneration()
@@ -34,6 +36,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void CreateRooms()
     {
+        foreach (GameObject enemy in currentEnemies)
+        {
+            Destroy(enemy);
+        }
+        currentEnemies.Clear();
         //create our dungeon to begin BSP generation
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, 
             new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
@@ -261,10 +268,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void SpawnEnemies(HashSet<Vector2Int> floors) 
     {
-        //conver the hash set to a list and sort it
+        //convert the hash set to a list and sort it
         List<Vector2Int> floorsList = floors.ToList<Vector2Int>();
         Vector2Int spawnPoint = floors.ElementAt(Random.Range(0, floors.Count));
         GameObject _enemy = Instantiate(enemies[Random.Range(0, enemies.Count)], new Vector3(spawnPoint.x, spawnPoint.y, 0), Quaternion.identity);
+        currentEnemies.Add(_enemy);
     }
 
     private void CreateLevelEnd(List<BoundsInt> roomsList) 
