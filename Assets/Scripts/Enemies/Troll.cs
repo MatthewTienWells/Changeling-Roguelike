@@ -6,8 +6,8 @@ public class Troll : Enemy
 {
     private Transform target;
     public float runDistance = 4f;
-    //Rigidbody for the anklebiter's melee attack
-    public Rigidbody meleeAttack;
+    //GameObject for the troll's melee attack
+    public GameObject meleeAttack;
 
     // Start is called before the first frame update
     void Start()
