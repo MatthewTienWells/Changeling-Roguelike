@@ -22,6 +22,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private GameObject player;
     [SerializeField]
     private GameObject playerController;
+    [SerializeField]
+    private List<GameObject> enemies;
+    [SerializeField]
+    private int maxEnemies = 10;
 
     protected override void RunProceduralGeneration()
     {
@@ -65,6 +69,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
         //spawn the player
         SpawnPlayer(floor);
+        //spawn the enemies
+        for (int i = 0; i < maxEnemies; i++)
+        {
+            SpawnEnemies(floor); 
+        }
         //tell the program it is not the start of the game anymore
         isGameStart = false;
     }
@@ -250,9 +259,12 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         }
     }
 
-    private void SpawnEnemies(List<BoundsInt> roomsList) 
+    private void SpawnEnemies(HashSet<Vector2Int> floors) 
     {
-        
+        //conver the hash set to a list and sort it
+        List<Vector2Int> floorsList = floors.ToList<Vector2Int>();
+        Vector2Int spawnPoint = floors.ElementAt(Random.Range(0, floors.Count));
+        GameObject _enemy = Instantiate(enemies[Random.Range(0, enemies.Count)], new Vector3(spawnPoint.x, spawnPoint.y, 0), Quaternion.identity);
     }
 
     private void CreateLevelEnd(List<BoundsInt> roomsList) 
