@@ -6,8 +6,8 @@ public class Mage : Enemy
 {
     private Transform target;
     public float fleeDistance = 4f;
-    //Rigidbody for the anklebiter's melee attack
-    public Rigidbody magicAttack;
+    //Rigidbody for the mage's spell attack
+    public GameObject magicAttack;
 
     // Start is called before the first frame update
     void Start()

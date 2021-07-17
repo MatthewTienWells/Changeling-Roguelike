@@ -8,10 +8,10 @@ public class PlayerCombatant : Combatant
     //Store movement data
     public Vector2 movement;
     
-    //Rigidbody for the player's default melee attack
-    public Rigidbody meleeAttack;
-    //Rigidbody for the player's default directional attack
-    public Rigidbody bowAttack;
+    //GameObject for the player's default melee attack
+    public GameObject meleeAttack;
+    //GameObject for the player's default directional attack
+    public GameObject bowAttack;
     //Boolean representing if we are loading player stats from a save file
     private bool loadStats = false;
     //Copies the characteristics of the enemy provided

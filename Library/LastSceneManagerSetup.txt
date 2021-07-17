@@ -1,9 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/PrefabsAndPauseMenu.unity
-=======
-- path: Assets/Scenes/ProceduralTestScene.unity
->>>>>>> ProceduralEntityInstantiation
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
+sceneSetups: []
