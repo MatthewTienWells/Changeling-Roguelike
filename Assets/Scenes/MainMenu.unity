@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 1544147680}
   - component: {fileID: 1544147684}
   m_Layer: 5
-  m_Name: UICanvas
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -400,7 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6152edaba69d2640b0c04eb7d60674e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 3911455113835920299}
+  mainMenu: {fileID: 3911455113835920299}
+  pauseMenu: {fileID: 0}
   optionsMenu: {fileID: 1032598242}
   creditsMenu: {fileID: 1704468733}
   mainMenuPrefab: {fileID: 6221308222488615825, guid: 98aa4a1fca40757498286ce7f1c596c7, type: 3}

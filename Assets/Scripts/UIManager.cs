@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    [Header("Menus")]
+    [Header("Menus"), SerializeField]
     private GameObject mainMenu;
     [SerializeField]
     private GameObject pauseMenu;
@@ -46,21 +46,39 @@ public class UIManager : MonoBehaviour
             Destroy(this.gameObject); // delete the new game manager attempting to store itself, there can only be one.
             Debug.Log("Warning: A second game manager was detected and destrtoyed"); // display message in the console to inform of its demise
         }
+        //check for missing menu objects at start
+        CheckMenuObjects();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //check for missing menu objects
+        CheckMenuObjects();
+        //check to see if we are not at our main menu
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(levelIndex)) 
         {
+            //and if the player is pressing down the escape key
             if (Input.GetKeyDown(KeyCode.Escape)) 
             {
+                //if the pause menu is not active
                 if (pauseMenu.activeSelf == false)
                 {
+                    //set time scale to zero
+                    Time.timeScale = 0f;
+                    //tell the game its paused
+                    isPaused = true;
+                    //activate it
                     pauseMenu.SetActive(true);
                 }
+                //otherwise
                 else 
                 {
+                    //set time scale to 1
+                    Time.timeScale = 1f;
+                    //tell game its not paused
+                    isPaused = false;
+                    //deactivate it
                     pauseMenu.SetActive(false);
                 }
             }
@@ -104,6 +122,11 @@ public class UIManager : MonoBehaviour
 
     public void CheckMenuObjects() 
     {
+        if (!mainMenu) 
+        {
+            mainMenu = Instantiate(mainMenuPrefab, Vector3.zero, Quaternion.identity, this.gameObject.transform);
+            mainMenu.SetActive(false);
+        }
         if (!pauseMenu)
         {
             pauseMenu = Instantiate(pausePrefab, Vector3.zero, Quaternion.identity, this.gameObject.transform);
