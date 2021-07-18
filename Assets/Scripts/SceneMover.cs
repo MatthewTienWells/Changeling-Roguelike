@@ -7,14 +7,23 @@ public class SceneMover : MonoBehaviour
 {
     [SerializeField]
     private float timer = 3f;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        SceneChangeTimer();
+        StartCoroutine(SceneChangeTimer());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Attack")) 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     //A timer for switching scenes from the intro scene
-    IEnumerable SceneChangeTimer()
+    IEnumerator SceneChangeTimer()
     {
         yield return new WaitForSeconds(timer);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

@@ -43,32 +43,35 @@ public class PlayerController : MonoBehaviour
     {
         if (player != null)
         {
-            //set movement x and y values to appropriate axis
-            movement.x = Input.GetAxis("Horizontal");
-            movement.y = Input.GetAxis("Vertical");
-            player.SetAnimations(movement);
-            player.Move(movement);
-
-            if (Input.GetButtonDown("Attack"))
+            if (UIManager.isPaused == false)
             {
-                player.attacks[loadedAttack].TriggerAttack();
-            }
+                //set movement x and y values to appropriate axis
+                movement.x = Input.GetAxis("Horizontal");
+                movement.y = Input.GetAxis("Vertical");
+                player.SetAnimations(movement);
+                player.Move(movement);
 
-            if (Input.GetButtonDown("SwitchAttacks"))
-            {
-                int swap = loadedAttack;
-                loadedAttack = secondAttack;
-                secondAttack = swap;
-            }
+                if (Input.GetButtonDown("Attack"))
+                {
+                    player.attacks[loadedAttack].TriggerAttack();
+                }
 
-            if (Input.mouseScrollDelta.y > 0 && loadedAttack < player.attacks.Count)
-            {
-                loadedAttack += 1;
-            }
+                if (Input.GetButtonDown("SwitchAttacks"))
+                {
+                    int swap = loadedAttack;
+                    loadedAttack = secondAttack;
+                    secondAttack = swap;
+                }
 
-            if (Input.mouseScrollDelta.y < 0 && loadedAttack > 0)
-            {
-                loadedAttack -= 1;
+                if (Input.mouseScrollDelta.y > 0 && loadedAttack < player.attacks.Count)
+                {
+                    loadedAttack += 1;
+                }
+
+                if (Input.mouseScrollDelta.y < 0 && loadedAttack > 0)
+                {
+                    loadedAttack -= 1;
+                } 
             }
         }
     }

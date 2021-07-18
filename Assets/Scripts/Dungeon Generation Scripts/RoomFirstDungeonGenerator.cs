@@ -241,8 +241,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             Vector2Int spawnPoint = floors.ElementAt(Random.Range(0, floors.Count));
             //spawn the player's controller
             GameObject _pController = Instantiate<GameObject>(playerController, new Vector3(spawnPoint.x, spawnPoint.y, 0), Quaternion.identity);
-            Debug.Log("Game Start player position: " + _pController.transform.position);
-            Debug.Log("Game Start: " + spawnPoint);
         }
         //otherwise
         else
@@ -261,8 +259,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             //enable previously disabled components
             sr.enabled = true;
             col.enabled = true;
-            Debug.Log("Not Game Start player position: " + player.transform.position);
-            Debug.Log("Not Game Start: " + spawnPoint);
         }
     }
 
@@ -277,6 +273,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void CreateLevelEnd(List<BoundsInt> roomsList) 
     {
-        
+        //TODO: Create a method for spawning the "victory stairs"
     }
 }

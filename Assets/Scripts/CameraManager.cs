@@ -10,12 +10,6 @@ public class CameraManager : MonoBehaviour
     [SerializeField]
     private Vector3 offset;
 
-    // Use this for initialization
-    void Start()
-    {
-     
-    }
-
     private void Update()
     {
         if (target == null)
