@@ -88,8 +88,16 @@ public class UIManager : MonoBehaviour
                 item.SetActive(false);
             } 
         }
+        //if the pause menu is active
+        if (pauseMenu.activeSelf == true) 
+        {
+            //deactivate it
+            pauseMenu.SetActive(false);
+        }
         //set the options menu to active
         optionsMenu.SetActive(true);
+
+        Debug.Log("Options menu Opened!");
     }
 
     public void CloseOptionsMenu()
@@ -105,6 +113,12 @@ public class UIManager : MonoBehaviour
                 //set them active
                 item.SetActive(true);
             } 
+        }
+        //if we are in our level scene
+        if (SceneManager.GetActiveScene().buildIndex == levelIndex) 
+        {
+            //set the pause menu active again
+            pauseMenu.SetActive(true);
         }
     }
     public void OpenCreditsMenu()
