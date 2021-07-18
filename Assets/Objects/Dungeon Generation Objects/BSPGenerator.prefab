@@ -52,3 +52,12 @@ MonoBehaviour:
   dungeonHeight: 70
   offset: 1
   usingRandomWalkRooms: 1
+  isGameStart: 1
+  player: {fileID: 7000120738982867085, guid: 76f97ae36b705b347a521faa65723723, type: 3}
+  playerController: {fileID: 2345639487251089676, guid: e56808bf5c2723342b314abd12feaff6, type: 3}
+  enemies:
+  - {fileID: 4408885379204864442, guid: cc34096c60d3ea9499b60021a7dca5e8, type: 3}
+  - {fileID: 1035044813323207063, guid: ba4e92d5288b7844ba22c9fa1e155c5b, type: 3}
+  - {fileID: 8997331124596448046, guid: 415473fec93bd944b9dd00231722b492, type: 3}
+  currentEnemies: []
+  maxEnemies: 10
