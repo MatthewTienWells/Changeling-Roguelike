@@ -17,9 +17,10 @@ public class PCGStarter : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(StartGenerating());
+        generator.GenerateDungeon();
     }
 
+    //will be used later, deadline for class has been reached tho
     IEnumerator StartGenerating() 
     {
         yield return new WaitForSeconds(timer);

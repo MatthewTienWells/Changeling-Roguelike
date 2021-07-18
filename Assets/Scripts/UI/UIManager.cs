@@ -96,8 +96,6 @@ public class UIManager : MonoBehaviour
         }
         //set the options menu to active
         optionsMenu.SetActive(true);
-
-        Debug.Log("Options menu Opened!");
     }
 
     public void CloseOptionsMenu()
@@ -179,10 +177,7 @@ public class UIManager : MonoBehaviour
 
     public void EnableMainMenu() 
     {
-        if (SceneManager.GetActiveScene().buildIndex == mainMenuIndex)
-        {
-            mainMenu.SetActive(true); 
-        }
+        mainMenu.SetActive(true); 
     }
 
     public void LoadNextScene() 
@@ -208,6 +203,16 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         //tell game its not paused
         isPaused = false;
+    }
+
+    public void ReturnToMain() 
+    {
+        //deactivate the pause menu
+        pauseMenu.SetActive(false);
+        //load the main mneu build index
+        SceneManager.LoadScene(mainMenuIndex);
+        //enable main menu
+        EnableMainMenu();
     }
 
     public void QuitGame() 
