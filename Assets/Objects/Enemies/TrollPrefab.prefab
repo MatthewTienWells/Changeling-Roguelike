@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7474470515815679267}
   - component: {fileID: 2630415380409483180}
   - component: {fileID: 9081390152775253381}
+  - component: {fileID: -3243452421632496987}
   m_Layer: 0
   m_Name: TrollPrefab
   m_TagString: Untagged
@@ -149,3 +150,29 @@ MonoBehaviour:
   pawnTransform: {fileID: 3934604912089081091}
   runDistance: 4
   meleeAttack: {fileID: 5657840431544750171, guid: 0688bfc4a502e05489c6f18990c11287, type: 3}
+--- !u!61 &-3243452421632496987
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8997331124596448046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6041667, y: 1.2291666}
+    newSize: {x: 0.29, y: 0.59}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6041667, y: 1.2291666}
+  m_EdgeRadius: 0

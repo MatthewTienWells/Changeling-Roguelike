@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -754311938808462699}
   - component: {fileID: -3840973272399213500}
   - component: {fileID: 6531701146915420735}
+  - component: {fileID: 2896570470435236656}
   m_Layer: 0
   m_Name: AnkleBiterPrefab
   m_TagString: Untagged
@@ -149,3 +150,29 @@ MonoBehaviour:
   pawnTransform: {fileID: 2796433186078072168}
   runDistance: 1
   meleeAttack: {fileID: 5657840431544750171, guid: 0688bfc4a502e05489c6f18990c11287, type: 3}
+--- !u!61 &2896570470435236656
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4408885379204864442}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.375}
+    newSize: {x: 0.5, y: 0.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.375}
+  m_EdgeRadius: 0

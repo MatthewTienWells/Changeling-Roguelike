@@ -9,8 +9,9 @@ public class Ranger : Enemy
     public GameObject rangedAttack;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         //Find the target (the player)
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Attack ranged = new Attack(); //Create a melee attack
@@ -23,7 +24,7 @@ public class Ranger : Enemy
     }
 
     // Update is called once per frame
-    void CombatMovement()
+    protected override void CombatMovement()
     {
 
         //find distance to player

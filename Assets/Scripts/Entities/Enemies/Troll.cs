@@ -10,8 +10,9 @@ public class Troll : Enemy
     public GameObject meleeAttack;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         //Find the target (the player)
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Attack melee = new Attack(); //Create a melee attack
@@ -27,7 +28,7 @@ public class Troll : Enemy
     }
 
     // Update is called once per frame
-    void CombatMovement()
+    protected override void CombatMovement()
     {
 
         //find distance to player

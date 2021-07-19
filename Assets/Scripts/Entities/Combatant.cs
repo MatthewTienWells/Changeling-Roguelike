@@ -30,7 +30,7 @@ public class Combatant : MonoBehaviour
 
     //Types of attack available to this entity
 
-    public List<Attack> attacks;
+    public List<Attack> attacks = new List<Attack>();
 
     //Minimum time in ticks between attacks
     public int cooldown = 1000;
@@ -70,11 +70,14 @@ public class Combatant : MonoBehaviour
     public List<Attack> validAttacks(float pawnLocationX, float selfLocationX, float pawnLocationY, float selfLocationY)
     {
         List<Attack> possibleAttacks = new List<Attack>();
-        foreach (Attack curAttack in attacks)
+        if (attacks.Count != 0)
         {
-            if (curAttack.canHit(pawnLocationX, selfLocationX, pawnLocationY, selfLocationY))
+            foreach (Attack curAttack in attacks)
             {
-                possibleAttacks.Add(curAttack);
+                if (curAttack.canHit(pawnLocationX, selfLocationX, pawnLocationY, selfLocationY))
+                {
+                    possibleAttacks.Add(curAttack);
+                }
             }
         }
 

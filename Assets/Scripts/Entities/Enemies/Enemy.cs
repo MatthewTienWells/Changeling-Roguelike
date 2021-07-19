@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class Enemy : Combatant
 {
-    [SerializeField] Transform pawnTransform;
+    [SerializeField] protected Transform playerTransform;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        pawnTransform = FindObjectOfType<Pawn>().GetComponent<Transform>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     //Checks if the player is in the range of an attack, and, if so, attacks. Returns true if an attack was executed, false otherwise.
     public bool AttemptAttack()
     {
-        List<Attack> possibleAttacks = validAttacks(pawnTransform.position.x,transform.position.x,pawnTransform.position.y,transform.position.y);
+        List<Attack> possibleAttacks = validAttacks(playerTransform.position.x,transform.position.x,playerTransform.position.y,transform.position.y);
         if (possibleAttacks.Any() &&
             !onCooldown()) //Checks if any attacks can currently be executed and if the enemy is not on cooldown
         {
@@ -31,7 +31,7 @@ public class Enemy : Combatant
                     bestDamage = curAttack.damage_modifier;
                 }
             }
-            transform.LookAt(pawnTransform);
+            transform.LookAt(playerTransform);
             chosenAttack.TriggerAttack();
             return true;
         }
@@ -42,7 +42,7 @@ public class Enemy : Combatant
     }
 
     //Moves according to the comabt movement AI
-    private void CombatMovement() 
+    protected virtual void CombatMovement() 
     {
 
     }
@@ -51,7 +51,7 @@ public class Enemy : Combatant
     void Update()
     {
         //If the player is nearby
-        if (checkForPlayer(pawnTransform.position.x,transform.position.x,pawnTransform.position.y,transform.position.y))
+        if (checkForPlayer(playerTransform.position.x,transform.position.x,playerTransform.position.y,transform.position.y))
         {
             if (AttemptAttack())
             {
@@ -62,10 +62,5 @@ public class Enemy : Combatant
                 CombatMovement();
             }
         }
-        else
-        {
-            anim.SetBool("Walking", false);
-        }
-
     }
 }
