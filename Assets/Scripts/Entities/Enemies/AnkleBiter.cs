@@ -31,7 +31,7 @@ public class AnkleBiter : Enemy
 
         //find distance to player
         float distanceToPlayer = Vector2.Distance(transform.position, target.position);
-        Vector2 moveDirection = transform.position - target.transform.position;
+        Vector2 moveDirection = target.transform.position - transform.position;
 
         //if player is close run
         if (distanceToPlayer < runDistance)

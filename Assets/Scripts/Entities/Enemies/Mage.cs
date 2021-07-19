@@ -38,7 +38,7 @@ public class Mage : Enemy
         //if player is close run
         if (distanceToPlayer < fleeDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, moveDirection * -1, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, -moveDirection * -1, speed * Time.deltaTime);
         }
         else
         {

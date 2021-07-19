@@ -34,7 +34,7 @@ public class Ranger : Enemy
         //if player is close run
         if (distanceToPlayer < fleeDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, moveDirection * -1, speed * Time.deltaTime * 2);
+            transform.position = Vector2.MoveTowards(transform.position, -moveDirection * -1, speed * Time.deltaTime * 2);
         }
         else if (Mathf.Abs(target.position.x - transform.position.x) < Mathf.Abs(target.position.y - transform.position.y))
         {
