@@ -209,8 +209,14 @@ public class UIManager : MonoBehaviour
     {
         //deactivate the pause menu
         pauseMenu.SetActive(false);
+        //set time scale to 1
+        Time.timeScale = 1f;
+        //tell game its not paused
+        isPaused = false;
         //load the main mneu build index
         SceneManager.LoadScene(mainMenuIndex);
+        //reset game start bool
+        RoomFirstDungeonGenerator.isGameStart = true;
         //enable main menu
         EnableMainMenu();
     }

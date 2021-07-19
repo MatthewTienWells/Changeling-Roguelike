@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class Attack
 {
     //Collidable rigidbody for the attack
     public GameObject attackCollider;
@@ -81,15 +81,15 @@ public class Attack : MonoBehaviour
     //When called, instantiates a new rigidbody to allow for collisions
     public void TriggerAttack()
     {
-        duplicateBody = Instantiate(attackCollider, parent.transform.position, parent.transform.rotation);
+        duplicateBody = UnityEngine.GameObject.Instantiate(attackCollider, parent.transform.position, parent.transform.rotation);
         if (shape == "area")
         {
-            duplicateBody.transform.position += transform.forward * range;
+            duplicateBody.transform.position += duplicateBody.transform.forward * range;
         }
         else if (shape == "directional")
         {
-            duplicateBody.GetComponent<Rigidbody2D>().velocity = transform.forward*speed;
-            duplicateBody.transform.position += transform.forward;
+            duplicateBody.GetComponent<Rigidbody2D>().velocity = duplicateBody.transform.forward*speed;
+            duplicateBody.transform.position += duplicateBody.transform.forward;
         }
     }
 
@@ -108,7 +108,7 @@ public class Attack : MonoBehaviour
         }
         if (age > duration)
         {
-            Destroy(duplicateBody);
+            UnityEngine.GameObject.Destroy(duplicateBody);
         }
     }
 

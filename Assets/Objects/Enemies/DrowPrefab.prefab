@@ -145,8 +145,7 @@ MonoBehaviour:
   speed: 150
   base_attack: 5
   resistances: []
-  attacks: []
   cooldown: 1000
   pawnTransform: {fileID: 8414325329481069080}
   fleeDistance: 3
-  rangedAttack: {fileID: 0}
+  rangedAttack: {fileID: 5657840431544750171, guid: 37778b68b8128564f87d117ba2861729, type: 3}

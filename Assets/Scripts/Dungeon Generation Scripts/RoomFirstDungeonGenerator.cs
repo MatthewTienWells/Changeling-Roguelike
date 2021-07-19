@@ -17,7 +17,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField]
     private bool usingRandomWalkRooms = false;
     [Header("Game Data"), SerializeField]
-    private bool isGameStart = true;
+    public static bool isGameStart = true;
     [SerializeField]
     private GameObject player;
     [SerializeField]

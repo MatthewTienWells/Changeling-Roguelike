@@ -172,8 +172,7 @@ MonoBehaviour:
   speed: 100
   base_attack: 5
   resistances: []
-  attacks: []
   cooldown: 1000
   movement: {x: 0, y: 0}
-  meleeAttack: {fileID: 0}
-  bowAttack: {fileID: 0}
+  meleeAttack: {fileID: 5657840431544750171, guid: 0688bfc4a502e05489c6f18990c11287, type: 3}
+  bowAttack: {fileID: 5657840431544750171, guid: 37778b68b8128564f87d117ba2861729, type: 3}
